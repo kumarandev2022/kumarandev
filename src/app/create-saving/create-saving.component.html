@@ -1,0 +1,115 @@
+<br>
+<div class="col-md-12">
+    <div class="card card-container">
+      <!-- <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      /> -->
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="createDate">Date</label>
+          <input
+            type="date"
+            class="form-control"
+            name="createDate"
+            [(ngModel)]="form.createDate"
+            required
+            #createDate="ngModel"
+          /> 
+          <div class="alert-danger" *ngIf="createDate.errors && f.submitted">
+            <div *ngIf="createDate.errors?.['required']">Date is required</div>
+          </div>
+          
+        </div>
+
+        <div class="form-group">
+          <label for="totalMembers">Total Members</label>
+          <input
+            type="totalMembers"
+            class="form-control"
+            name="totalMembers"
+            [(ngModel)]="form.totalMembers"
+            required
+            totalMembers
+            #totalMembers="ngModel"
+          />
+          <div class="alert-danger" *ngIf="totalMembers.errors && f.submitted">
+            <div *ngIf="totalMembers.errors?.['required']">Total Members is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="monthlySavAmt">Monthly Savings Amount</label>
+          <input
+            type="monthlySavAmt"
+            class="form-control"
+            name="monthlySavAmt"
+            [(ngModel)]="form.monthlySavAmt"
+            required
+            minlength="3"
+            #monthlySavAmt="ngModel"
+          />
+          <div class="alert-danger" *ngIf="monthlySavAmt.errors && f.submitted">
+            <div *ngIf="monthlySavAmt.errors?.['required']">Monthly Savings Amount is required</div>
+            <div *ngIf="monthlySavAmt.errors?.['minlength']">
+              Monthly savings must be at least 3 digits
+            </div>
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="totalSavAmt">Total Savings</label>
+          <input
+            type="totalSavAmt"
+            class="form-control"
+            name="totalSavAmt"
+            [(ngModel)]="form.totalSavAmt"
+            required
+            minlength="5"
+            #totalSavAmt="ngModel"
+          />
+          <div class="alert-danger" *ngIf="totalSavAmt.errors && f.submitted">
+            <div *ngIf="totalSavAmt.errors?.['required']">Total savings is required</div>
+            <div *ngIf="totalSavAmt.errors?.['minlength']">
+              Total savings must be at least 5 digits
+            </div>
+          </div>
+        </div> -->
+        <div class="form-group">
+          <label for="totalSavAmt">Total Savings Amount</label>
+          <input
+            type="totalSavAmt"
+            class="form-control"
+            name="totalSavAmt"
+            [(ngModel)]="form.totalSavAmt"
+            required
+            minlength="5"
+            #totalSavAmt="ngModel"
+          />
+          <div class="alert-danger" *ngIf="totalSavAmt.errors && f.submitted">
+            <div *ngIf="totalSavAmt.errors?.['required']">Total Savings Amount is required</div>
+            <div *ngIf="totalSavAmt.errors?.['minlength']">
+              Total Monthly savings must be at least 5 digits
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Submit</button>
+        </div>
+  
+        <div class="alert alert-warning" *ngIf="f.submitted && isSavingFailed">
+          Savings failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Successfully Created!
+      </div>
+    </div>
+  </div>
