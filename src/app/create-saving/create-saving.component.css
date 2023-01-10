@@ -49,5 +49,11 @@
     cursor: pointer;
     background-color: #007bff;
   }
+  .container {
+  margin: 5px;
+  /* padding: 0 10px; */
+  /* width: 70%; */
+}
+
 
   

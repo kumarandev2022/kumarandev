@@ -16,6 +16,7 @@ import { CreateSavingComponent } from './create-saving/create-saving.component';
 import { CreateInterestComponent } from './create-interest/create-interest.component';
 import { DxDataGridModule } from 'devextreme-angular';
 import { CustomerSavingsComponent } from './customer-savings/customer-savings.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CustomerSavingsComponent } from './customer-savings/customer-savings.co
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DxDataGridModule 
+    DxDataGridModule,
+    NgMultiSelectDropDownModule 
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
