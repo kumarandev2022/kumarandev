@@ -19,6 +19,7 @@ import { CustomerSavingsComponent } from './customer-savings/customer-savings.co
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoanRequestComponent } from './loan-request/loan-request.component';
+import { MonthlySavingsComponent } from './monthly-savings/monthly-savings.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LoanRequestComponent } from './loan-request/loan-request.component';
     CreateInterestComponent,
     CustomerSavingsComponent,
     UserProfileComponent,
-    LoanRequestComponent
+    LoanRequestComponent,
+    MonthlySavingsComponent
   ],
   imports: [
     BrowserModule,

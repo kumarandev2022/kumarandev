@@ -12,6 +12,7 @@ import { CreateSavingComponent } from './create-saving/create-saving.component';
 import { CreateInterestComponent } from './create-interest/create-interest.component';
 import { CustomerSavingsComponent } from './customer-savings/customer-savings.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoanRequestComponent } from './loan-request/loan-request.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'createsaving', component: CreateSavingComponent },
   { path: 'createinterest', component: CreateInterestComponent },
   { path: 'savings', component: CustomerSavingsComponent },
-  {path: 'user-profile',component: UserProfileComponent}
+  {path: 'user-profile',component: UserProfileComponent},
+  {path:'loan-request', component: LoanRequestComponent}
 
 ];
 

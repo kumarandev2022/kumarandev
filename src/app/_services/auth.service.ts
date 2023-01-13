@@ -39,7 +39,14 @@ export class AuthService {
     }, httpOptions);
   }
 
+  
 
+  loanRequest(reqdate: string, loanamount: string): Observable<any> {
+    return this.http.post(AUTH_API + 'loan-request', {
+      reqdate,
+      loanamount
+    }, httpOptions);
+  }
 
   savings(createDate: string, totalMembers: number, monthlySavAmt: number, totalSavAmt: number): Observable<any> {
     return this.http.post(AUTH_API + 'savings', {

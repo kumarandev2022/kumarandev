@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
-  selector: 'app-loan-request',
-  templateUrl: './loan-request.component.html',
-  styleUrls: ['./loan-request.component.css']
+  selector: 'app-monthly-savings',
+  templateUrl: './monthly-savings.component.html',
+  styleUrls: ['./monthly-savings.component.css']
 })
-export class LoanRequestComponent implements OnInit {
+export class MonthlySavingsComponent implements OnInit {
   form: any = {
     interestdate: null,
     totalmembers: null,
