@@ -30,6 +30,17 @@ export class AuthService {
     }, httpOptions);
   }
 
+  
+  userProfile(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(AUTH_API + 'signup', {
+      username,
+      email,
+      password
+    }, httpOptions);
+  }
+
+
+
   savings(createDate: string, totalMembers: number, monthlySavAmt: number, totalSavAmt: number): Observable<any> {
     return this.http.post(AUTH_API + 'savings', {
       createDate,

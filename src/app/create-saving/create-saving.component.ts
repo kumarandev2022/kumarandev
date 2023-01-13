@@ -19,7 +19,7 @@ export class CreateSavingComponent implements OnInit {
   errorMessage = '';
   title = "ng-multiselect-dropdown";
   countries: Array<any> = [];
-  selCountries = [
+  selCountries = this.countries = [
     {
       item_id: 1,
       item_text: "Srinivasan"
@@ -27,139 +27,128 @@ export class CreateSavingComponent implements OnInit {
     {
       item_id: 2,
       item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 4,
+      item_text: "Suresh",
+     isDisabled: true
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
+    },
+    {
+      item_id: 1,
+      item_text: "Srinivasan"
+    },
+    {
+      item_id: 2,
+      item_text: "Kumaran"
+    },
+    {
+      item_id: 3,
+      item_text: "Jai"
     }
   ];
   dropdownSettings: any = {};
 
   ngOnInit() {
-    this.countries = [
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 4,
-        item_text: "Suresh",
-       isDisabled: true
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      },
-      {
-        item_id: 1,
-        item_text: "Srinivasan"
-      },
-      {
-        item_id: 2,
-        item_text: "Kumaran"
-      },
-      {
-        item_id: 3,
-        item_text: "Jai"
-      }
-    ];
-
     this.dropdownSettings = {
       singleSelection: false,
       idField: "item_id",

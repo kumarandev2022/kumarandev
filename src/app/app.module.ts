@@ -17,6 +17,8 @@ import { CreateInterestComponent } from './create-interest/create-interest.compo
 import { DxDataGridModule } from 'devextreme-angular';
 import { CustomerSavingsComponent } from './customer-savings/customer-savings.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoanRequestComponent } from './loan-request/loan-request.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     BoardUserComponent,
     CreateSavingComponent,
     CreateInterestComponent,
-    CustomerSavingsComponent
+    CustomerSavingsComponent,
+    UserProfileComponent,
+    LoanRequestComponent
   ],
   imports: [
     BrowserModule,
