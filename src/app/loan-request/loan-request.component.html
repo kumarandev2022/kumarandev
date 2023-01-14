@@ -1,4 +1,5 @@
 <br>
+<h5 align="center" style="color: #0651a0;">Loan Request</h5>
 <div class="col-md-12">
     <div class="card card-container">
       <!-- <img
@@ -13,7 +14,7 @@
         #f="ngForm"
         novalidate
       >
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="interestdate">Date</label>
           <input
             type="date"
@@ -27,10 +28,57 @@
           <div class="alert-danger" *ngIf="interestdate.errors && f.submitted">
             <div *ngIf="interestdate.errors?.['required']">Date is required</div>
           </div>
+        </div> -->
+
+        <div class="form-group">
+          <label for="totalmembers">Request Amount</label>
+          <!-- <input
+            type="totalmembers"
+            class="form-control"
+            name="totalmembers"
+            [(ngModel)]="form.totalmembers"
+            required
+            totalmembers
+            #totalmembers="ngModel"
+          /> -->
+          <select class="form-control" type="savingsamount" name="savingsamount">
+            <option>Select Amount</option> 
+            <option disabled class="option1">Choose Amount</option> 
+            <option>10000</option>
+            <option>20000</option>  
+            <option>30000</option> 
+            <option>50000</option> 
+         </select> 
+          <!-- <div class="alert-danger" *ngIf="totalmembers.errors && f.submitted">
+            <div *ngIf="totalmembers.errors?.['required']">totalmembers is required</div>
+          </div> -->
         </div>
 
         <div class="form-group">
-          <label for="totalmembers">Total Members</label>
+          <label for="totalmembers">Status</label>
+          <!-- <input
+            type="totalmembers"
+            class="form-control"
+            name="totalmembers"
+            [(ngModel)]="form.totalmembers"
+            required
+            totalmembers
+            #totalmembers="ngModel"
+          /> -->
+          <select class="form-control" type="savingsamount" name="savingsamount">
+            <option>Select Status</option> 
+            <option disabled class="option1">Choose Status</option>
+            <option>Emergency</option>
+            <option>Important</option>  
+            <option>Need</option> 
+         </select> 
+          <!-- <div class="alert-danger" *ngIf="totalmembers.errors && f.submitted">
+            <div *ngIf="totalmembers.errors?.['required']">totalmembers is required</div>
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label for="totalmembers">Reason for loan</label>
           <input
             type="totalmembers"
             class="form-control"
@@ -45,34 +93,6 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="monthlyinterest">Monthly Interest</label>
-          <input
-            type="monthlyinterest"
-            class="form-control"
-            name="monthlyinterest"
-            [(ngModel)]="form.monthlyinterest"
-            required
-            #monthlyinterest="ngModel"
-          />
-          <div class="alert-danger" *ngIf="monthlyinterest.errors && f.submitted">
-            <div *ngIf="monthlyinterest.errors?.['required']">Monthly Interest is required</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="monthlyshare">Monthly Share</label>
-          <input
-            type="monthlyshare"
-            class="form-control"
-            name="monthlyshare"
-            [(ngModel)]="form.monthlyshare"
-            required
-            #monthlyshare="ngModel"
-          />
-          <div class="alert-danger" *ngIf="monthlyshare.errors && f.submitted">
-            <div *ngIf="monthlyshare.errors?.['required']">Monthly share is required</div>
-          </div>
-        </div>
         <div class="form-group">
           <button class="btn btn-primary btn-block">Submit</button>
         </div>

@@ -32,7 +32,7 @@ export class AuthService {
 
   
   userProfile(username: string, email: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
+    return this.http.post(AUTH_API + 'user-register', {
       username,
       email,
       password
@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   savings(createDate: string, totalMembers: number, monthlySavAmt: number, totalSavAmt: number): Observable<any> {
-    return this.http.post(AUTH_API + 'savings', {
+    return this.http.post(AUTH_API + 'savings-share', {
       createDate,
       totalMembers,
       monthlySavAmt,

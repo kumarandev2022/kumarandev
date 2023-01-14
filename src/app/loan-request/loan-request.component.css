@@ -27,12 +27,25 @@
   /* more styles added to beautify the input fields */
   input {
     margin: 0.25em 0em 1em 0em;
+    outline: none; 
+    padding: 0.5em;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    border-radius: 0.25em;
+    color: black;
+  }
+  select {
+    margin: 0.25em 0em 1em 0em;
     outline: none;
     padding: 0.5em;
     border: none;
     background-color: rgb(225, 225, 225);
     border-radius: 0.25em;
     color: black;
+  }
+
+  select.form-control option.option1 {
+    background-color: rgb(238, 194, 107);
   }
   /* styles for button */
   button {

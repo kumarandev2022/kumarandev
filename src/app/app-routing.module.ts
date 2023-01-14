@@ -13,6 +13,7 @@ import { CreateInterestComponent } from './create-interest/create-interest.compo
 import { CustomerSavingsComponent } from './customer-savings/customer-savings.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoanRequestComponent } from './loan-request/loan-request.component';
+import { MonthlySavingsComponent } from './monthly-savings/monthly-savings.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,9 +26,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'createsaving', component: CreateSavingComponent },
   { path: 'createinterest', component: CreateInterestComponent },
-  { path: 'savings', component: CustomerSavingsComponent },
-  {path: 'user-profile',component: UserProfileComponent},
-  {path:'loan-request', component: LoanRequestComponent}
+  { path: 'savings-share', component: CustomerSavingsComponent },
+  {path: 'user-register',component: UserProfileComponent},
+  {path:'loan-request', component: LoanRequestComponent},
+  {path:'m-savings', component: MonthlySavingsComponent},
+  {path:'change-password', component: RegisterComponent}
 
 ];
 
