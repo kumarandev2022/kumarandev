@@ -1,0 +1,192 @@
+<br>
+<h5 align="center" style="color: #0651a0;">Customer Registration</h5>
+<div class="col-md-12">
+    <div class="card card-container">
+      <!-- <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      /> -->
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+      <div class="form-group">
+        <label for="clubcode">Club Code</label>
+        <input
+          type="clubcode"
+          class="form-control"
+          name="clubcode"
+          [(ngModel)]="form.clubcode"
+          required
+          minlength="4"
+          #clubcode="ngModel"
+        />
+        <div class="alert-danger" *ngIf="clubcode.errors && f.submitted">
+          <div *ngIf="clubcode.errors?.['required']">Clubcode is required</div>
+          <div *ngIf="clubcode.errors?.['minlength']">
+            Clubcode must be at least 4 characters
+          </div>
+        </div>
+      </div>
+
+        <div class="form-group">
+          <label for="customerid">Customer Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="customerid"
+            [(ngModel)]="form.customerid"
+            required
+            maxlength="4"
+            #customerid="ngModel"
+          />
+          <div class="alert-danger" *ngIf="customerid.errors && f.submitted">
+            <div *ngIf="customerid.errors?.['required']">Customer Id is required</div>
+            <div *ngIf="customerid.errors?.['maxlength']">
+                Customer Id must be at least 4 characters
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="customername">Customer Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="customername"
+              [(ngModel)]="form.customername"
+              required
+              maxlength="15"
+              #customername="ngModel"
+            />
+            <div class="alert-danger" *ngIf="customername.errors && f.submitted">
+              <div *ngIf="customername.errors?.['required']">Customer Name is required</div>
+              <div *ngIf="customername.errors?.['maxlength']">
+                  Customer Name must be at least 15 characters
+              </div>
+            </div>
+          </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="text"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            maxlength="8"
+            #password="ngModel"
+          />
+          <div class="alert-danger" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+            <div *ngIf="customername.errors?.['maxlength']">
+                Password must be at least 8 digits
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" 
+          type="gender" 
+          name="gender"
+          [(ngModel)]="form.gender"
+          required
+          #gender="ngModel">
+            <option>Select Gender</option>
+            <option disabled class="option1">Choose Gender</option>
+            <option>Male</option>
+            <option>Female</option>  
+         </select> 
+        </div>
+        
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input
+              type="date"
+              class="form-control"
+              name="dob"
+              [(ngModel)]="form.dob"
+              required
+              #dob="ngModel"
+            /> 
+            <div class="alert-danger" *ngIf="dob.errors && f.submitted">
+              <div *ngIf="dob.errors?.['required']">DOB is required</div>
+            </div>
+          </div>
+
+        <!-- <div class="form-group">
+            <label for="password">Age</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              [(ngModel)]="form.password"
+              required
+              minlength="6"
+              #password="ngModel"
+            />
+            <div class="alert-danger" *ngIf="password.errors && f.submitted">
+              <div *ngIf="password.errors?.['required']">Password is required</div>
+              <div *ngIf="password.errors?.['minlength']">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div> -->
+          <div class="form-group">
+            <label for="phonenumber">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phonenumber"
+              [(ngModel)]="form.phonenumber"
+              required
+              minlength="10"
+              #phonenumber="ngModel"
+            />
+            <div class="alert-danger" *ngIf="phonenumber.errors && f.submitted">
+              <div *ngIf="phonenumber.errors?.['required']">Phone Number is required</div>
+              <div *ngIf="phonenumber.errors?.['minlength']">
+                Phonenumber must be at least 10 digits
+              </div>
+            </div>
+          </div>
+          
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="address"
+              [(ngModel)]="form.address"
+              required
+              minlength="3"
+              maxlength="20"
+              #address="ngModel"
+            />
+            <div class="alert-danger" *ngIf="address.errors && f.submitted">
+              <div *ngIf="address.errors?.['required']">Address is required</div>
+              <div *ngIf="address.errors?.['minlength']">
+                Address must be at least 3 characters
+              </div>
+              <div *ngIf="address.errors?.['maxlength']">
+                Address must be at most 20 characters
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Customer Registeration</button>
+        </div>
+  
+        <div class="alert alert-warning" *ngIf="f.submitted && isRegisterationFailed">
+            Customer Registeration Failed failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+      </div>
+    </div>
+  </div>

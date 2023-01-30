@@ -20,6 +20,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoanRequestComponent } from './loan-request/loan-request.component';
 import { MonthlySavingsComponent } from './monthly-savings/monthly-savings.component';
+import { ClubRegistrationComponent } from './club-registration/club-registration.component';
+import { RelCustomerComponent } from './rel-customer/rel-customer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { MonthlySavingsComponent } from './monthly-savings/monthly-savings.compo
     CustomerSavingsComponent,
     UserProfileComponent,
     LoanRequestComponent,
-    MonthlySavingsComponent
+    MonthlySavingsComponent,
+    ClubRegistrationComponent,
+    RelCustomerComponent
   ],
   imports: [
     BrowserModule,

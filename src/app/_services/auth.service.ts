@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../user';
 
 //const AUTH_API = 'http://localhost:8080/api/auth/';
 const AUTH_API = 'http://localhost:8080/api/';
@@ -22,6 +23,10 @@ export class AuthService {
     }, httpOptions);
   }
 
+  loginUser(user:User):Observable<object> {
+    return this.http.post(AUTH_API + 'signin',user);
+  }
+
   register(username: string, email: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signup', {
       username,
@@ -29,8 +34,21 @@ export class AuthService {
       password
     }, httpOptions);
   }
-
   
+  clubRegistration(clubname: string, clubcode: number, yfsccode: string, address:string): Observable<any> {
+    return this.http.post(AUTH_API + 'clubs', {
+      clubname,
+      clubcode,
+      yfsccode,
+      address
+    }, httpOptions);
+  }
+  customerRegistration(clubcode:number, customerid:number, customername:string, password:string, gender:string, dob:string, phonenumber:number, address:string): Observable<any> {
+    return this.http.post(AUTH_API + 'clubs', {
+      clubcode, customerid, customername, password, gender, dob, phonenumber, address
+    }, httpOptions);
+  }
+  //customerRegistration
   userProfile(username: string, email: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'user-register', {
       username,

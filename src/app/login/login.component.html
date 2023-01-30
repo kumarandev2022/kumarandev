@@ -23,6 +23,7 @@
               type="text"
               class="form-control"
               name="username"
+              id="username"
               [(ngModel)]="form.username"
               required
               #username="ngModel"
@@ -41,6 +42,7 @@
               type="password"
               class="form-control"
               name="password"
+              id="password"
               [(ngModel)]="form.password"
               required
               minlength="6"
@@ -73,9 +75,9 @@
           </div>
         </form>
     
-        <div class="alert alert-success" *ngIf="isLoggedIn">
+        <!-- <div class="alert alert-success" *ngIf="isLoggedIn">
           Logged in as {{ roles }}.
-        </div>
+        </div> -->
       </div>
     </div>
 

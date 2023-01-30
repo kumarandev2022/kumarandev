@@ -14,6 +14,8 @@ import { CustomerSavingsComponent } from './customer-savings/customer-savings.co
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoanRequestComponent } from './loan-request/loan-request.component';
 import { MonthlySavingsComponent } from './monthly-savings/monthly-savings.component';
+import { ClubRegistrationComponent } from './club-registration/club-registration.component';
+import { RelCustomerComponent } from './rel-customer/rel-customer.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,10 +29,12 @@ const routes: Routes = [
   { path: 'createsaving', component: CreateSavingComponent },
   { path: 'createinterest', component: CreateInterestComponent },
   { path: 'savings-share', component: CustomerSavingsComponent },
-  {path: 'user-register',component: UserProfileComponent},
-  {path:'loan-request', component: LoanRequestComponent},
-  {path:'m-savings', component: MonthlySavingsComponent},
-  {path:'change-password', component: RegisterComponent}
+  { path: 'user-register',component: UserProfileComponent},
+  { path:'loan-request', component: LoanRequestComponent},
+  { path:'m-savings', component: MonthlySavingsComponent},
+  { path:'change-password', component: RegisterComponent},
+  { path:'clubs', component: ClubRegistrationComponent},
+  { path:'customers', component: RelCustomerComponent}
 
 ];
 
