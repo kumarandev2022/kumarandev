@@ -14,7 +14,7 @@ export class RelCustomerComponent implements OnInit {
     password: null,
     gender: null,
     dob :null,
-    phonenumber: 0,
+    phonenumber: null,
     address: null
   };
   isSuccessful = false;
@@ -27,9 +27,9 @@ export class RelCustomerComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const {clubcode, customerid, customername, password, gender, dob, phonenumber, address} = this.form;
+    const {clubcode, customerid, customername, password, gender, dob, phonenumber} = this.form;
 
-    this.authService.customerRegistration(clubcode, customerid, customername, password, gender, dob, phonenumber, address).subscribe(
+    this.authService.customerRegistration(clubcode, customerid, customername, password, gender, dob, phonenumber).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;

@@ -43,9 +43,9 @@ export class AuthService {
       address
     }, httpOptions);
   }
-  customerRegistration(clubcode:number, customerid:number, customername:string, password:string, gender:string, dob:string, phonenumber:number, address:string): Observable<any> {
-    return this.http.post(AUTH_API + 'clubs', {
-      clubcode, customerid, customername, password, gender, dob, phonenumber, address
+  customerRegistration(clubcode:number, customerid:number, customername:string, password:string, gender:string, dob:string, phonenumber:string): Observable<any> {
+    return this.http.post(AUTH_API + 'customers', {
+      clubcode, customerid, customername, password, gender, dob, phonenumber
     }, httpOptions);
   }
   //customerRegistration
