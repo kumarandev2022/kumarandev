@@ -25,17 +25,17 @@ export class MonthlySavingsComponent implements OnInit {
   onSubmit(): void {
     const { reqdate, loanamount } = this.form;
 
-    this.authService.loanRequest(reqdate, loanamount).subscribe(
-      data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isInterestFailed = false;
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isInterestFailed = true;
-      }
-    );
-  }
+  //   this.authService.loanRequest(reqdate, loanamount).subscribe(
+  //     data => {
+  //       console.log(data);
+  //       this.isSuccessful = true;
+  //       this.isInterestFailed = false;
+  //     },
+  //     err => {
+  //       this.errorMessage = err.error.message;
+  //       this.isInterestFailed = true;
+  //     }
+  //   );
+   }
 }
 

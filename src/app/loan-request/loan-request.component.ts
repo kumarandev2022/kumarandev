@@ -8,13 +8,15 @@ import { AuthService } from '../_services/auth.service';
 })
 export class LoanRequestComponent implements OnInit {
   form: any = {
-    interestdate: null,
-    totalmembers: null,
-    monthlysavings: null,
-    totalsavings: null
+    customerid:5001,
+    reqdate: null,
+    reqamount: 0,
+    type: null,
+    reason: null,
+    status:"pending"
   };
   isSuccessful = false;
-  isInterestFailed = false;
+  isLoanRequestFailed = false;
   errorMessage = '';
 
   constructor(private authService: AuthService) { }
@@ -23,17 +25,17 @@ export class LoanRequestComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { reqdate, loanamount } = this.form;
+    const { customerid, reqdate, reqamount,type,reason,status } = this.form;
 
-    this.authService.loanRequest(reqdate, loanamount).subscribe(
+    this.authService.loanRequest(customerid,reqdate, reqamount,type,reason, status).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
-        this.isInterestFailed = false;
+        this.isLoanRequestFailed = false;
       },
       err => {
         this.errorMessage = err.error.message;
-        this.isInterestFailed = true;
+        this.isLoanRequestFailed = true;
       }
     );
   }

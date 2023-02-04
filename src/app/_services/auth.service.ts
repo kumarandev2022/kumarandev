@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'signin', {
+    return this.http.post(AUTH_API + 'login', {
       username,
       password
     }, httpOptions);
@@ -59,10 +59,12 @@ export class AuthService {
 
   
 
-  loanRequest(reqdate: string, loanamount: string): Observable<any> {
+  loanRequest(customerid: number,reqdate: string, reqamount: number,type:string,reason:string,status:string): Observable<any> {
     return this.http.post(AUTH_API + 'loan-request', {
       reqdate,
-      loanamount
+      reqamount,
+      type,
+      reason
     }, httpOptions);
   }
 

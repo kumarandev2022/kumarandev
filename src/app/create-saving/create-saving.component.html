@@ -75,41 +75,25 @@
     </div>
   </div>
         <div class="form-group">
-          <label for="totalMembers">Total Members</label>
+          <label for="amount">Amount</label>
           <input
-            type="totalMembers"
+            type="amount"
             class="form-control"
-            name="totalMembers"
-            [(ngModel)]="form.totalMembers"
-            required
-            totalMembers
-            #totalMembers="ngModel"
-          />
-          <div class="alert-danger" *ngIf="totalMembers.errors && f.submitted">
-            <div *ngIf="totalMembers.errors?.['required']">Total Members is required</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="monthlySavAmt">Monthly Savings Amount</label>
-          <input
-            type="monthlySavAmt"
-            class="form-control"
-            name="monthlySavAmt"
-            [(ngModel)]="form.monthlySavAmt"
+            name="amount"
+            [(ngModel)]="form.amount"
             required
             minlength="3"
-            #monthlySavAmt="ngModel"
+            #amount="ngModel"
           />
-          <div class="alert-danger" *ngIf="monthlySavAmt.errors && f.submitted">
-            <div *ngIf="monthlySavAmt.errors?.['required']">Monthly Savings Amount is required</div>
-            <div *ngIf="monthlySavAmt.errors?.['minlength']">
-              Monthly savings must be at least 3 digits
+          <div class="alert-danger" *ngIf="amount.errors && f.submitted">
+            <div *ngIf="amount.errors?.['required']">Amount is required</div>
+            <div *ngIf="amount.errors?.['minlength']">
+              Savings must be at least 3 digits
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="totalSavAmt">Total Savings Amount</label>
+          <label for="totalSavAmt">Total Savings</label>
           <input
             type="totalSavAmt"
             class="form-control"
@@ -120,9 +104,9 @@
             #totalSavAmt="ngModel"
           />
           <div class="alert-danger" *ngIf="totalSavAmt.errors && f.submitted">
-            <div *ngIf="totalSavAmt.errors?.['required']">Total Savings Amount is required</div>
+            <div *ngIf="totalSavAmt.errors?.['required']">Total Savings is required</div>
             <div *ngIf="totalSavAmt.errors?.['minlength']">
-              Total Monthly savings must be at least 5 digits
+              Total savings must be at least 5 digits
             </div>
           </div>
         </div>

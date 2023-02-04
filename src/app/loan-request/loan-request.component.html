@@ -2,11 +2,6 @@
 <h5 align="center" style="color: #0651a0;">Loan Request</h5>
 <div class="col-md-12">
     <div class="card card-container">
-      <!-- <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      /> -->
       <form
         *ngIf="!isSuccessful"
         name="form"
@@ -14,82 +9,70 @@
         #f="ngForm"
         novalidate
       >
-        <!-- <div class="form-group">
-          <label for="interestdate">Date</label>
+        <div class="form-group">
+          <label for="reqdate">Date</label>
           <input
             type="date"
-            id="date"
+            id="reqdate"
             class="form-control"
-            name="interestdate"
-            [(ngModel)]="form.interestdate"
+            name="reqdate"
+            [(ngModel)]="form.reqdate"
             required
-            #interestdate="ngModel"
+            #reqdate="ngModel"
           />
-          <div class="alert-danger" *ngIf="interestdate.errors && f.submitted">
-            <div *ngIf="interestdate.errors?.['required']">Date is required</div>
+          <div class="alert-danger" *ngIf="reqdate.errors && f.submitted">
+            <div *ngIf="reqdate.errors?.['required']">Date is required</div>
           </div>
-        </div> -->
+        </div>
 
         <div class="form-group">
-          <label for="totalmembers">Request Amount</label>
-          <!-- <input
-            type="totalmembers"
-            class="form-control"
-            name="totalmembers"
-            [(ngModel)]="form.totalmembers"
-            required
-            totalmembers
-            #totalmembers="ngModel"
-          /> -->
-          <select class="form-control" type="savingsamount" name="savingsamount">
-            <option>Select Amount</option> 
+          <label for="reqamount">Amount</label>
+          <select class="form-control" type="reqamount" name="reqamount" [(ngModel)]="form.reqamount"
+          required
+          reqamount
+          #reqamount="ngModel">
             <option disabled class="option1">Choose Amount</option> 
             <option>10000</option>
             <option>20000</option>  
             <option>30000</option> 
+            <option>40000</option> 
             <option>50000</option> 
          </select> 
-          <!-- <div class="alert-danger" *ngIf="totalmembers.errors && f.submitted">
-            <div *ngIf="totalmembers.errors?.['required']">totalmembers is required</div>
-          </div> -->
+          <div class="alert-danger" *ngIf="reqamount.errors && f.submitted">
+            <div *ngIf="reqamount.errors?.['required']">reqamount is required</div>
+          </div> 
         </div>
 
-        <div class="form-group">
-          <label for="totalmembers">Status</label>
-          <!-- <input
-            type="totalmembers"
-            class="form-control"
-            name="totalmembers"
-            [(ngModel)]="form.totalmembers"
+        <div class="form-group" aria-disabled="true">
+          <label for="type">Type</label>
+          <select class="form-control" type="type" name="type"
+            [(ngModel)]="form.type"
             required
-            totalmembers
-            #totalmembers="ngModel"
-          /> -->
-          <select class="form-control" type="savingsamount" name="savingsamount">
-            <option>Select Status</option> 
-            <option disabled class="option1">Choose Status</option>
+            type
+            #type="ngModel">
+            <option disabled class="option1">Choose Type</option>
             <option>Emergency</option>
             <option>Important</option>  
             <option>Need</option> 
          </select> 
-          <!-- <div class="alert-danger" *ngIf="totalmembers.errors && f.submitted">
-            <div *ngIf="totalmembers.errors?.['required']">totalmembers is required</div>
-          </div> -->
+          <div class="alert-danger" *ngIf="type.errors && f.submitted">
+            <div *ngIf="type.errors?.['required']">Type is required</div>
+          </div> 
         </div>
 
         <div class="form-group">
-          <label for="totalmembers">Reason for loan</label>
+          <label for="reason">Reason</label>
           <input
-            type="totalmembers"
+            type="reason"
             class="form-control"
-            name="totalmembers"
-            [(ngModel)]="form.totalmembers"
+            name="reason"
+            [(ngModel)]="form.reason"
             required
-            totalmembers
-            #totalmembers="ngModel"
+            reason
+            #reason="ngModel"
           />
-          <div class="alert-danger" *ngIf="totalmembers.errors && f.submitted">
-            <div *ngIf="totalmembers.errors?.['required']">totalmembers is required</div>
+          <div class="alert-danger" *ngIf="reason.errors && f.submitted">
+            <div *ngIf="reason.errors?.['required']">Reason is required</div>
           </div>
         </div>
 
@@ -97,13 +80,13 @@
           <button class="btn btn-primary btn-block">Submit</button>
         </div>
   
-        <div class="alert alert-warning" *ngIf="f.submitted && isInterestFailed">
-          Interest failed!<br />{{ errorMessage }}
+        <div class="alert alert-warning" *ngIf="f.submitted && isLoanRequestFailed">
+          Loan Request failed!<br />{{ errorMessage }}
         </div>
       </form>
   
       <div class="alert alert-success" *ngIf="isSuccessful">
-        Successfully Created!
+        Successfully Loan Requested!
       </div>
     </div>
   </div>
