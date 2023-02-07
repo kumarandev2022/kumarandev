@@ -15,41 +15,72 @@
         novalidate
       >
         <div class="form-group">
-          <label for="interestdate">Date</label>
+          <label for="createdate">Date</label>
           <input
             type="date"
             id="date"
             class="form-control"
-            name="interestdate"
-            [(ngModel)]="form.interestdate"
+            name="createdate"
+            [(ngModel)]="form.createdate"
             required
-            #interestdate="ngModel"
+            #createdate="ngModel"
           />
-          <div class="alert-danger" *ngIf="interestdate.errors && f.submitted">
-            <div *ngIf="interestdate.errors?.['required']">Date is required</div>
+          <div class="alert-danger" *ngIf="createdate.errors && f.submitted">
+            <div *ngIf="createdate.errors?.['required']">Date is required</div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="savingsamount">Savings Amount</label>
-           <!-- <input
-            type="monthlyshare"
-            class="form-control"
-            name="monthlyshare"
-            [(ngModel)]="form.monthlyshare"
-            required
-            #monthlyshare="ngModel"
-          /> -->
-          <select class="form-control" type="savingsamount" name="savingsamount">
-            <option>Select Amount</option> 
+          <label for="amount">Amount</label>
+          <select class="form-control" type="text" name="amount"
+          name="amount"
+          [(ngModel)]="form.amount"
+          required
+          #amount="ngModel">
             <option disabled class="option1">Choose Amount</option> 
             <option>400</option>
             <option>500</option>  
             <option>1000</option>  
          </select>         
-          <!-- <div class="alert-danger" *ngIf="savingsamount.errors && f.submitted">
-            <div *ngIf="savingsamount.errors?.['required']">Savings Amount is required</div>
-          </div> -->
+          <div class="alert-danger" *ngIf="amount.errors && f.submitted">
+            <div *ngIf="amount.errors?.['required']">Savings Amount is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mode">Mode</label>
+          <select class="form-control" type="mode" name="mode"
+          name="mode"
+          [(ngModel)]="form.mode"
+          required
+          #mode="ngModel">
+            <option disabled class="option1">Choose Mode</option> 
+            <option>GPay</option>
+            <option>PhonePe</option>  
+            <option>Paytm</option> 
+            <option>CRED</option>  
+            <option>Net/Mobile banking</option>
+            <option>Neft/IMPS Bank Transfer</option> 
+            <option>By Hand</option>  
+         </select>         
+          <div class="alert-danger" *ngIf="mode.errors && f.submitted">
+            <div *ngIf="mode.errors?.['required']">Mode is required</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="submitted">To whom submitted</label>
+          <input
+            type="submitted"
+            class="form-control"
+            name="submitted"
+            [(ngModel)]="form.submitted"
+            required
+            submitted
+            #submitted="ngModel"
+          />
+          <div class="alert-danger" *ngIf="submitted.errors && f.submitted">
+            <div *ngIf="submitted.errors?.['required']">submitted is required</div>
+          </div>
         </div>
 
         <div class="form-group">

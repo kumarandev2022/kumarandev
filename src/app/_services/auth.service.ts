@@ -61,19 +61,18 @@ export class AuthService {
 
   loanRequest(customerid: number,reqdate: string, reqamount: number,type:string,reason:string,status:string): Observable<any> {
     return this.http.post(AUTH_API + 'loan-request', {
+      customerid,
       reqdate,
       reqamount,
       type,
-      reason
+      reason,
+      status
     }, httpOptions);
   }
 
-  savings(createDate: string, totalMembers: number, monthlySavAmt: number, totalSavAmt: number): Observable<any> {
-    return this.http.post(AUTH_API + 'savings-share', {
-      createDate,
-      totalMembers,
-      monthlySavAmt,
-      totalSavAmt
+  savings(createdate:string, amount:number,mode:string,submitted:string,customerid:number): Observable<any> {
+    return this.http.post(AUTH_API + 'm-savings', {
+      createdate,amount,mode,submitted,customerid
     }, httpOptions);
   }
 

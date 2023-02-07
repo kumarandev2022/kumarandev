@@ -180,9 +180,9 @@ export class CreateSavingComponent implements OnInit {
 
 
   onSubmit(): void {
-    const { createDate, totalMembers, monthlySavAmt, totalSavAmt } = this.form;
+    const { createDate, totalMembers, monthlySavAmt, totalSavAmt,customerid } = this.form;
 
-    this.authService.savings(createDate, totalMembers, monthlySavAmt, totalSavAmt).subscribe(
+    this.authService.savings(createDate, totalMembers, monthlySavAmt, totalSavAmt,customerid).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;

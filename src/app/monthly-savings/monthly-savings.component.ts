@@ -8,10 +8,11 @@ import { AuthService } from '../_services/auth.service';
 })
 export class MonthlySavingsComponent implements OnInit {
   form: any = {
-    interestdate: null,
-    totalmembers: null,
-    monthlysavings: null,
-    totalsavings: null
+    createdate: null,
+    amount: 0,
+    mode: null,
+    submitted: null,
+    customerid: 5001
   };
   isSuccessful = false;
   isInterestFailed = false;
@@ -23,19 +24,19 @@ export class MonthlySavingsComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { reqdate, loanamount } = this.form;
+    const { createdate, amount,mode,submitted,customerid } = this.form;
 
-  //   this.authService.loanRequest(reqdate, loanamount).subscribe(
-  //     data => {
-  //       console.log(data);
-  //       this.isSuccessful = true;
-  //       this.isInterestFailed = false;
-  //     },
-  //     err => {
-  //       this.errorMessage = err.error.message;
-  //       this.isInterestFailed = true;
-  //     }
-  //   );
+    this.authService.savings(createdate, amount,mode,submitted,customerid).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isInterestFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isInterestFailed = true;
+      }
+    );
    }
 }
 
