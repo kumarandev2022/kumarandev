@@ -9,10 +9,12 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 })
 export class CreateSavingComponent implements OnInit {
   form: any = {
-    createDate: null,
-    totalMembers: null,
-    monthlySavAmt: null,
-    totalSavAmt: null
+    createdate: null,
+    amount: 0,
+    mode: null,
+    submitted: null,
+    customerid: 5001
+
   };
   isSuccessful = false;
   isSavingFailed = false;
@@ -21,128 +23,15 @@ export class CreateSavingComponent implements OnInit {
   countries: Array<any> = [];
   selCountries = this.countries = [
     {
-      item_id: 1,
+      item_id: 5001,
       item_text: "Srinivasan"
     },
     {
-      item_id: 2,
+      item_id: 5002,
       item_text: "Kumaran"
     },
     {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 4,
-      item_text: "Suresh",
-     isDisabled: true
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
-      item_text: "Jai"
-    },
-    {
-      item_id: 1,
-      item_text: "Srinivasan"
-    },
-    {
-      item_id: 2,
-      item_text: "Kumaran"
-    },
-    {
-      item_id: 3,
+      item_id: 5003,
       item_text: "Jai"
     }
   ];
@@ -163,9 +52,11 @@ export class CreateSavingComponent implements OnInit {
   get getItems() {
     return this.countries.reduce((acc, curr) => {
       acc[curr.item_id] = curr;
+      console.log(curr);
       return acc;
     }, {});
   }
+ 
 
   onItemSelect(item: any) {
     console.log("onItemSelect", item);
@@ -180,9 +71,9 @@ export class CreateSavingComponent implements OnInit {
 
 
   onSubmit(): void {
-    const { createDate, totalMembers, monthlySavAmt, totalSavAmt,customerid } = this.form;
+    const { createdate, amount,mode,submitted,customerid } = this.form;
 
-    this.authService.savings(createDate, totalMembers, monthlySavAmt, totalSavAmt,customerid).subscribe(
+    this.authService.savings(createdate, amount,mode,submitted,customerid).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
@@ -193,5 +84,5 @@ export class CreateSavingComponent implements OnInit {
         this.isSavingFailed = true;
       }
     );
-  }
+   }
 }

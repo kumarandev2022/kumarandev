@@ -22,6 +22,10 @@ import { LoanRequestComponent } from './loan-request/loan-request.component';
 import { MonthlySavingsComponent } from './monthly-savings/monthly-savings.component';
 import { ClubRegistrationComponent } from './club-registration/club-registration.component';
 import { RelCustomerComponent } from './rel-customer/rel-customer.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
+import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { RelCustomerComponent } from './rel-customer/rel-customer.component';
     LoanRequestComponent,
     MonthlySavingsComponent,
     ClubRegistrationComponent,
-    RelCustomerComponent
+    RelCustomerComponent,
+    UpdateCustomerComponent,
+    DeleteCustomerComponent,
+    CustomerDetailsComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,

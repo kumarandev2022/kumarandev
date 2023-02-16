@@ -16,12 +16,12 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'login', {
-      username,
-      password
-    }, httpOptions);
-  }
+  // login(username: string, password: string): Observable<any> {
+  //   return this.http.post(AUTH_API + 'login', {
+  //     username,
+  //     password
+  //   }, httpOptions);
+  // }
 
   loginUser(user:User):Observable<object> {
     return this.http.post(AUTH_API + 'signin',user);
@@ -85,5 +85,12 @@ export class AuthService {
     }, httpOptions);
   }
 
-  
+  getCustomerInfo(clubcode: number): Observable<any> {
+    return this.http.get(AUTH_API + 'customerinfo/1911', httpOptions);
+  }
+
+  getCustomerCred(customerid: number): Observable<any> {
+    return this.http.get(AUTH_API + 'customercred/'+customerid, httpOptions);
+  }
+
 }

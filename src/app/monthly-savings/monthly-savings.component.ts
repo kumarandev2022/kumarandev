@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { CustomerService } from '../_services/customer.service';
 
 @Component({
   selector: 'app-monthly-savings',
@@ -12,15 +13,21 @@ export class MonthlySavingsComponent implements OnInit {
     amount: 0,
     mode: null,
     submitted: null,
-    customerid: 5001
+    customerid: 5001,
+    clubcode: 1911
   };
   isSuccessful = false;
-  isInterestFailed = false;
+  isSavingsFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private customerService: CustomerService) { }
 
   ngOnInit(): void {
+    this.authService.getCustomerInfo(1911).subscribe(
+      data => {
+        console.log(data);
+      }
+    )
   }
 
   onSubmit(): void {
@@ -30,11 +37,11 @@ export class MonthlySavingsComponent implements OnInit {
       data => {
         console.log(data);
         this.isSuccessful = true;
-        this.isInterestFailed = false;
+        this.isSavingsFailed = false;
       },
       err => {
         this.errorMessage = err.error.message;
-        this.isInterestFailed = true;
+        this.isSavingsFailed = true;
       }
     );
    }

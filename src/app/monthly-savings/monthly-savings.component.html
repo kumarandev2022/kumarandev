@@ -87,8 +87,8 @@
           <button class="btn btn-primary btn-block">Submit</button>
         </div>
   
-        <div class="alert alert-warning" *ngIf="f.submitted && isInterestFailed">
-          Interest failed!<br />{{ errorMessage }}
+        <div class="alert alert-warning" *ngIf="f.submitted && isSavingsFailed">
+          Savings failed!<br />{{ errorMessage }}
         </div>
       </form>
   

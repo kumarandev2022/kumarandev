@@ -74,48 +74,64 @@
       </div>
     </div>
   </div>
-        <div class="form-group">
-          <label for="amount">Amount</label>
-          <input
-            type="amount"
-            class="form-control"
-            name="amount"
-            [(ngModel)]="form.amount"
-            required
-            minlength="3"
-            #amount="ngModel"
-          />
-          <div class="alert-danger" *ngIf="amount.errors && f.submitted">
-            <div *ngIf="amount.errors?.['required']">Amount is required</div>
-            <div *ngIf="amount.errors?.['minlength']">
-              Savings must be at least 3 digits
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="totalSavAmt">Total Savings</label>
-          <input
-            type="totalSavAmt"
-            class="form-control"
-            name="totalSavAmt"
-            [(ngModel)]="form.totalSavAmt"
-            required
-            minlength="5"
-            #totalSavAmt="ngModel"
-          />
-          <div class="alert-danger" *ngIf="totalSavAmt.errors && f.submitted">
-            <div *ngIf="totalSavAmt.errors?.['required']">Total Savings is required</div>
-            <div *ngIf="totalSavAmt.errors?.['minlength']">
-              Total savings must be at least 5 digits
-            </div>
-          </div>
-        </div>
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <select class="form-control" type="text" name="amount"
+    name="amount"
+    [(ngModel)]="form.amount"
+    required
+    #amount="ngModel">
+      <option disabled class="option1">Choose Amount</option> 
+      <option>400</option>
+      <option>500</option>  
+      <option>1000</option>  
+   </select>         
+    <div class="alert-danger" *ngIf="amount.errors && f.submitted">
+      <div *ngIf="amount.errors?.['required']">Savings Amount is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="mode">Mode</label>
+    <select class="form-control" type="mode" name="mode"
+    name="mode"
+    [(ngModel)]="form.mode"
+    required
+    #mode="ngModel">
+      <option disabled class="option1">Choose Mode</option> 
+      <option>GPay</option>
+      <option>PhonePe</option>  
+      <option>Paytm</option> 
+      <option>CRED</option>  
+      <option>Net/Mobile banking</option>
+      <option>Neft/IMPS Bank Transfer</option> 
+      <option>By Hand</option>  
+   </select>         
+    <div class="alert-danger" *ngIf="mode.errors && f.submitted">
+      <div *ngIf="mode.errors?.['required']">Mode is required</div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="submitted">Submitted By</label>
+    <input
+      type="submitted"
+      class="form-control"
+      name="submitted"
+      [(ngModel)]="form.submitted"
+      required
+      submitted
+      #submitted="ngModel"
+    />
+    <div class="alert-danger" *ngIf="submitted.errors && f.submitted">
+      <div *ngIf="submitted.errors?.['required']">submitted is required</div>
+    </div>
+  </div>
         <div class="form-group">
           <button class="btn btn-primary btn-block">Submit</button>
         </div>
   
         <div class="alert alert-warning" *ngIf="f.submitted && isSavingFailed">
-          Savings failed!<br />{{ errorMessage }}
+          Savings failed!<br/>{{ errorMessage }}
         </div>
       </form>
   

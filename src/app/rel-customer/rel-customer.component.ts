@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { CustomerService } from '../_services/customer.service';
 
 @Component({
   selector: 'app-rel-customer',
@@ -20,11 +21,12 @@ export class RelCustomerComponent implements OnInit {
   isSuccessful = false;
   isRegisterationFailed = false;
   errorMessage = '';
-
-  constructor(private authService: AuthService) { }
+ 
+  constructor(private authService: AuthService,private customerService: CustomerService) { }
 
   ngOnInit(): void {
-  }
+   }
+
 
   onSubmit(): void {
     const {clubcode, customerid, customername, password, gender, dob, phonenumber} = this.form;
