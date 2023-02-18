@@ -14,14 +14,17 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  getCustomData(customerId: number) {
+    throw new Error('Method not implemented.');
+  }
   constructor(private http: HttpClient) { }
 
-  // login(username: string, password: string): Observable<any> {
-  //   return this.http.post(AUTH_API + 'login', {
-  //     username,
-  //     password
-  //   }, httpOptions);
-  // }
+  login(username: number, password: string): Observable<any> {
+    return this.http.post(AUTH_API + 'login', {
+      username,
+      password
+    }, httpOptions);
+  }
 
   loginUser(user:User):Observable<object> {
     return this.http.post(AUTH_API + 'signin',user);
@@ -86,11 +89,11 @@ export class AuthService {
   }
 
   getCustomerInfo(clubcode: number): Observable<any> {
-    return this.http.get(AUTH_API + 'customerinfo/1911', httpOptions);
+    return this.http.get(AUTH_API + 'customersinfo/'+clubcode, httpOptions);
   }
 
-  getCustomerCred(customerid: number): Observable<any> {
-    return this.http.get(AUTH_API + 'customercred/'+customerid, httpOptions);
+  getCustomerData(customerid: number): Observable<any> {
+    return this.http.get(AUTH_API + 'customerdata/'+customerid, httpOptions);
   }
 
 }

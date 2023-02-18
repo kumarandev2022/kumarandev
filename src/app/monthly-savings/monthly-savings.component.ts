@@ -23,11 +23,6 @@ export class MonthlySavingsComponent implements OnInit {
   constructor(private authService: AuthService, private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    this.authService.getCustomerInfo(1911).subscribe(
-      data => {
-        console.log(data);
-      }
-    )
   }
 
   onSubmit(): void {

@@ -18,20 +18,20 @@
           novalidate
         >
           <div class="form-group">
-            <label for="username">Username</label>
+            <label for="customerid">Username</label>
             <input
               type="text"
               class="form-control"
-              name="username"
-              id="username"
-              [(ngModel)]="form.username"
+              name="customerid"
+              id="customerid"
+              [(ngModel)]="form.customerid"
               required
-              #username="ngModel"
+              #customerid="ngModel"
             />
             <div
               class="alert alert-danger"
               role="alert"
-              *ngIf="username.errors && f.submitted"
+              *ngIf="customerid.errors && f.submitted"
             >
               Username is required!
             </div>
