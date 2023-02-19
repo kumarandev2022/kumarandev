@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   user:User = new User();
   //customerId:number = 5001;
   customer:Customer = new Customer();
-  constructor(private router: Router, private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     // if (this.tokenStorage.getToken()) {
@@ -39,38 +39,32 @@ export class LoginComponent implements OnInit {
   //   )
    }
 
+   
+
   onSubmit(): void {
     const { customerid, password } = this.form;
     this.authService.login(customerid,password).subscribe(
       data => {
         console.log(data);
-      // if (this.authService.login(username, password)
-      // console.log(this.customer.customerid === username);
-      // console.log(this.customer.password === password);
-      // if('5001' === username && this.customer.password === password)
-      // {
         console.log("inside");
-        this.router.navigate(['/home'])
-        // this.tokenStorage.saveToken(data.accessToken);
-        // this.tokenStorage.saveUser(data);
-
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        // this.roles = this.tokenStorage.getUser().roles;
-       // this.reloadPage();
+        this.router.navigate(['/home'])
+        // this.reloadPage();
       },
-      // else 
-      // {
-      //   console.log("esle");
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
    );
-  }
+
+   
   }
 
-  // reloadPage(): void {
-  //   window.location.reload();
-  // }
-// }
+  reloadPage(): void {
+    window.location.reload();
+  }
+}
+
+
+ 
