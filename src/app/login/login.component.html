@@ -10,7 +10,10 @@
         <!-- <div class="imgcontainer">
           <img src="assets/login.png" class="logo">
       </div> -->
-        <form
+   <!-- <label for="item-input">Add an item:</label>
+      <input type="text" id="item-input" #newItem>
+      <button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button> -->
+           <form
           *ngIf="!isLoggedIn"
           name="form"
           (ngSubmit)="f.form.valid && onSubmit()"
@@ -74,10 +77,10 @@
             </div>
           </div>
         </form>
-    
         <!-- <div class="alert alert-success" *ngIf="isLoggedIn">
           Logged in as {{ roles }}.
         </div> -->
       </div>
+      
     </div>
 

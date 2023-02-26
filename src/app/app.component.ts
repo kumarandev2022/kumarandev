@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from './_services/local-storage.service';
 import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
@@ -7,30 +8,42 @@ import { TokenStorageService } from './_services/token-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  private roles: string[] = [];
-  isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
-  username?: string;
+ // private roles: string[] = [];
+  status: string = "fail";
+  //isLoggedIn = false;
+  // showAdminBoard = false;
+  // showModeratorBoard = false;
+  // username?: string;
+  // messageFromChild!: string;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  // onMessageFromChild(message: string) {
+  //   console.log('Parent: ', message)
+
+  //   this.messageFromChild = message;
+  // }
+  constructor(private tokenStorageService: TokenStorageService, public storage: LocalStorageService) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
 
-    if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
+    this.status = localStorage.getItem('status') ?? '{}';
+    console.log('ssssss:::'+this.status);
+    //this.reloadPage();
+  // this.isLoggedIn = !!this.tokenStorageService.getToken();
+    //this.isLoggedIn = true;
+    // if (this.isLoggedIn) {
+    //   const user = this.tokenStorageService.getUser();
+    //   this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+    //   this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+    //   this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
-      this.username = user.username;
-    }
+    //   this.username = user.username;
+    // }
   }
 
-  logout(): void {
-    this.tokenStorageService.signOut();
+ 
+
+  reloadPage(): void {
     window.location.reload();
   }
 }

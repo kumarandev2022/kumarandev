@@ -16,10 +16,13 @@ import { LoanRequestComponent } from './loan-request/loan-request.component';
 import { MonthlySavingsComponent } from './monthly-savings/monthly-savings.component';
 import { ClubRegistrationComponent } from './club-registration/club-registration.component';
 import { RelCustomerComponent } from './rel-customer/rel-customer.component';
+import { LocalStorageService } from './_services/local-storage.service';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
@@ -40,6 +43,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [LocalStorageService]
 })
 export class AppRoutingModule { }

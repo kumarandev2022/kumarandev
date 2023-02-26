@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Customer } from '../customer';
 import { User } from '../user';
 import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
-import { TokenStorageService } from '../_services/token-storage.service';
+// import { TokenStorageService } from '../_services/token-storage.service';
+import { LocalStorageService } from '../_services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -16,18 +17,31 @@ export class LoginComponent implements OnInit {
     password: null,
     //customerid: 5001
   };
+  //@Output() newItemEvent = new EventEmitter<string>();
+  messageHere:string = "success";
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
   user:User = new User();
   //customerId:number = 5001;
+  // message = "kumaran";
+  // @Output() isLoginmsg: EventEmitter<string> = new EventEmitter<string>();
+   @Input() name: string = "true";
   customer:Customer = new Customer();
-  constructor(private router: Router, private authService: AuthService) { }
-
+  constructor(private router: Router, private authService: AuthService,public storage:LocalStorageService) { }
+  // addNewItem(value: string) {
+  //   console.log("value:"+value);
+  //   this.newItemEvent.emit(value);
+  // }
   ngOnInit(): void {
+   if(this.isLoggedIn == false) 
+   {
+    localStorage.removeItem('status');
+   }
+    
     // if (this.tokenStorage.getToken()) {
-    //   this.isLoggedIn = true;
+     //this.isLoggedIn = true;
     //   this.roles = this.tokenStorage.getUser().roles;
     // }
   //   this.authService.getCustomerCred(this.customerId).subscribe(
@@ -49,8 +63,11 @@ export class LoginComponent implements OnInit {
         console.log("inside");
         this.isLoginFailed = false;
         this.isLoggedIn = true;
+        localStorage.setItem('status', 'success');
+        // this.isLoginmsg.emit(this.message);
+        //this.newItemEvent.emit("success");
         this.router.navigate(['/home'])
-        // this.reloadPage();
+        //this.reloadPage();
       },
       err => {
         this.errorMessage = err.error.message;
@@ -61,9 +78,9 @@ export class LoginComponent implements OnInit {
    
   }
 
-  reloadPage(): void {
-    window.location.reload();
-  }
+  // reloadPage(): void {
+  //   window.location.reload();
+  // }
 }
 
 

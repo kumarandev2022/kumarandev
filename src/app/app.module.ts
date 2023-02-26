@@ -26,6 +26,7 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
 import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,9 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     UpdateCustomerComponent,
     DeleteCustomerComponent,
     CustomerDetailsComponent,
-    CustomerListComponent
-  ],
+    CustomerListComponent,
+    LogoutComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
