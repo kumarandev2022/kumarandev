@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
-    if(this.count === 0) {
+
     //this.reloadPage();
-  }
+    this.count+1;
     this.authService.getCustomerData(this.customerId).subscribe(
       data => {
         
@@ -28,8 +28,11 @@ export class HomeComponent implements OnInit {
 }
 
 reloadPage(): void {
+  if(this.count == 0) {
   window.location.reload();
-  this.count+1;
-}
+ 
+   }
+  
+ }
 }
 
