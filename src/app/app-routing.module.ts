@@ -18,9 +18,11 @@ import { ClubRegistrationComponent } from './club-registration/club-registration
 import { RelCustomerComponent } from './rel-customer/rel-customer.component';
 import { LocalStorageService } from './_services/local-storage.service';
 import { LogoutComponent } from './logout/logout.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },

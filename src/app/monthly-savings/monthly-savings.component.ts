@@ -13,24 +13,28 @@ export class MonthlySavingsComponent implements OnInit {
     amount: 0,
     mode: null,
     submitted: null,
-    customerid: 5001,
-    clubcode: 1911
+    customerid: localStorage.getItem('customerid') ?? '',
+    status: "pending"
   };
   isSuccessful = false;
   isSavingsFailed = false;
   errorMessage = '';
+  customerid: string ="";
+  savingStatus = '';
 
   constructor(private authService: AuthService, private customerService: CustomerService) { }
 
   ngOnInit(): void {
+    
   }
 
   onSubmit(): void {
-    const { createdate, amount,mode,submitted,customerid } = this.form;
+    const { createdate, amount,mode,submitted,customerid,status} = this.form;
 
-    this.authService.savings(createdate, amount,mode,submitted,customerid).subscribe(
+    this.authService.savings(createdate,amount,mode,submitted,customerid,status).subscribe(
       data => {
         console.log(data);
+        this.savingStatus = data.status;
         this.isSuccessful = true;
         this.isSavingsFailed = false;
       },

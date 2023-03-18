@@ -13,7 +13,8 @@ export class CreateSavingComponent implements OnInit {
     amount: 0,
     mode: null,
     submitted: null,
-    customerid: 5001
+    customerid: null,
+    status: null
 
   };
   isSuccessful = false;
@@ -71,9 +72,9 @@ export class CreateSavingComponent implements OnInit {
 
 
   onSubmit(): void {
-    const { createdate, amount,mode,submitted,customerid } = this.form;
+    const { createdate, amount,mode,submitted,customerid,status } = this.form;
 
-    this.authService.savings(createdate, amount,mode,submitted,customerid).subscribe(
+    this.authService.savings(createdate, amount,mode,submitted,customerid,status).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;

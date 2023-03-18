@@ -62,7 +62,7 @@ export class AuthService {
 
   
 
-  loanRequest(customerid: number,reqdate: string, reqamount: number,type:string,reason:string,status:string): Observable<any> {
+  loanRequest(customerid: string,reqdate: string, reqamount: number,type:string,reason:string,status:string): Observable<any> {
     return this.http.post(AUTH_API + 'loan-request', {
       customerid,
       reqdate,
@@ -73,9 +73,9 @@ export class AuthService {
     }, httpOptions);
   }
 
-  savings(createdate:string, amount:number,mode:string,submitted:string,customerid:number): Observable<any> {
+  savings(createdate:string, amount:number,mode:string,submitted:string,customerid:string,status:string): Observable<any> {
     return this.http.post(AUTH_API + 'm-savings', {
-      createdate,amount,mode,submitted,customerid
+      createdate,amount,mode,submitted,customerid,status
     }, httpOptions);
   }
 
@@ -92,7 +92,7 @@ export class AuthService {
     return this.http.get(AUTH_API + 'customersinfo/'+clubcode, httpOptions);
   }
 
-  getCustomerData(customerid: number): Observable<any> {
+  getCustomerData(customerid: string): Observable<any> {
     return this.http.get(AUTH_API + 'customerdata/'+customerid, httpOptions);
   }
 

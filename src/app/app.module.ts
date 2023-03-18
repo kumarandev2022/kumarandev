@@ -27,6 +27,7 @@ import { DeleteCustomerComponent } from './delete-customer/delete-customer.compo
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { LogoutComponent } from './logout/logout.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { LogoutComponent } from './logout/logout.component';
     DeleteCustomerComponent,
     CustomerDetailsComponent,
     CustomerListComponent,
-    LogoutComponent
+    LogoutComponent,
+    HomepageComponent
     ],
   imports: [
     BrowserModule,

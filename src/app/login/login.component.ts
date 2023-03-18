@@ -13,7 +13,7 @@ import { LocalStorageService } from '../_services/local-storage.service';
 })
 export class LoginComponent implements OnInit {
   form: any = {
-    customerid: 0,
+    customerid: null,
     password: null,
     //customerid: 5001
   };
@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   user:User = new User();
+  customercheck:string ="";
   //customerId:number = 5001;
-  // message = "kumaran";
   // @Output() isLoginmsg: EventEmitter<string> = new EventEmitter<string>();
    @Input() name: string = "true";
   customer:Customer = new Customer();
@@ -64,8 +64,17 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         localStorage.setItem('status', 'success');
-        // this.isLoginmsg.emit(this.message);
-        //this.newItemEvent.emit("success");
+        this.customer.customerid = data.customerid;
+        if(this.customer.customerid.startsWith("APJPP"))
+        {
+          this.customercheck = "customers";
+          console.log("inside"+this.customercheck);
+          localStorage.setItem('customerchk', this.customercheck);
+        }
+        localStorage.setItem('customerid', this.customer.customerid);
+        this.customer.customername = data.customername; 
+        localStorage.setItem('customername', this.customer.customername);
+        this.customer.password = data.password;
         this.router.navigate(['/home'])
         //this.reloadPage();
       },

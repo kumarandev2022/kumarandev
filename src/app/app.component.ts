@@ -10,6 +10,8 @@ import { TokenStorageService } from './_services/token-storage.service';
 export class AppComponent implements OnInit {
  // private roles: string[] = [];
   status: string = "fail";
+  customername: string ="";
+  customerschk: string ="";
   //isLoggedIn = false;
   // showAdminBoard = false;
   // showModeratorBoard = false;
@@ -26,6 +28,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.status = localStorage.getItem('status') ?? '{}';
+    this.customername = localStorage.getItem('customername') ?? '';
+    this.customerschk = localStorage.getItem('customerchk') ?? '';
     console.log('ssssss:::'+this.status);
     //this.reloadPage();
   // this.isLoggedIn = !!this.tokenStorageService.getToken();
