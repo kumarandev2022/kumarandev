@@ -28,7 +28,15 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HomepageComponent } from './homepage/homepage.component';
-
+import { LoanReqViewComponent } from './loan-req-view/loan-req-view.component';
+import { LoanReqEditComponent } from './loan-req-edit/loan-req-edit.component';
+import { MonthlySavViewComponent } from './monthly-sav-view/monthly-sav-view.component';
+import { LoadingComponent } from './loading/loading.component';
+import { MonthlySavEditComponent } from './monthly-sav-edit/monthly-sav-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { LoanHomeComponent } from './loan-home/loan-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +60,13 @@ import { HomepageComponent } from './homepage/homepage.component';
     CustomerDetailsComponent,
     CustomerListComponent,
     LogoutComponent,
-    HomepageComponent
+    HomepageComponent,
+    LoanReqViewComponent,
+    LoanReqEditComponent,
+    MonthlySavViewComponent,
+    LoadingComponent,
+    MonthlySavEditComponent,
+    LoanHomeComponent
     ],
   imports: [
     BrowserModule,
@@ -60,7 +74,10 @@ import { HomepageComponent } from './homepage/homepage.component';
     FormsModule,
     HttpClientModule,
     DxDataGridModule,
-    NgMultiSelectDropDownModule 
+    NgMultiSelectDropDownModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

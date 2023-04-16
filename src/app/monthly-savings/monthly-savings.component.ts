@@ -20,7 +20,6 @@ export class MonthlySavingsComponent implements OnInit {
   isSavingsFailed = false;
   errorMessage = '';
   customerid: string ="";
-  savingStatus = '';
 
   constructor(private authService: AuthService, private customerService: CustomerService) { }
 
@@ -34,10 +33,9 @@ export class MonthlySavingsComponent implements OnInit {
     this.authService.savings(createdate,amount,mode,submitted,customerid,status).subscribe(
       data => {
         console.log(data);
-        this.savingStatus = data.status;
         this.isSuccessful = true;
         this.isSavingsFailed = false;
-      },
+       },
       err => {
         this.errorMessage = err.error.message;
         this.isSavingsFailed = true;

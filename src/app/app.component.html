@@ -1,8 +1,8 @@
-<style>
+<!-- <style>
   .bgimg {
     background-image: url("assets/bg.jpg");
   }
-  </style>
+  </style> -->
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">SIRUSEMMIPPU</a>
@@ -15,11 +15,14 @@
           <a href="/m-savings" class="nav-link" routerLink="m-savings">Savings</a>
         </li>
         <li class="nav-item">
-          <a href="/loan-request" class="nav-link" routerLink="loan-request">Loan</a>
+          <a href="/loan-home" class="nav-link" routerLink="loan-home">Loan</a>
         </li>
         <li class="nav-item">
           <a href="/savings-share" class="nav-link" routerLink="savings-share">Share</a>
         </li>
+        <!-- <li class="nav-item">
+          <a href="/loan-view" class="nav-link" routerLink="loan-view">Loan View</a>
+        </li> -->
       </ul>
       <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="customerschk != 'customers'">
       <li class="nav-item">

@@ -75,7 +75,12 @@ export class AuthService {
 
   savings(createdate:string, amount:number,mode:string,submitted:string,customerid:string,status:string): Observable<any> {
     return this.http.post(AUTH_API + 'm-savings', {
-      createdate,amount,mode,submitted,customerid,status
+      createdate,
+      amount,
+      mode,
+      submitted,
+      customerid,
+      status
     }, httpOptions);
   }
 
@@ -92,8 +97,18 @@ export class AuthService {
     return this.http.get(AUTH_API + 'customersinfo/'+clubcode, httpOptions);
   }
 
+  getSavingsShare(customerid: string): Observable<any> {
+    return this.http.get(AUTH_API + 'savings-share/'+customerid, httpOptions);
+  }
+
   getCustomerData(customerid: string): Observable<any> {
     return this.http.get(AUTH_API + 'customerdata/'+customerid, httpOptions);
   }
 
+  getLoanReq(customerId: string): Observable<any> {
+    return this.http.get(AUTH_API + 'loanreq-view/'+customerId, httpOptions);
+  }
+  getLoanView(customerId: string): Observable<any> {
+    return this.http.get(AUTH_API + 'loanreq-view/'+customerId, httpOptions);
+  }
 }

@@ -18,8 +18,7 @@ export class LoanRequestComponent implements OnInit {
   isSuccessful = false;
   isLoanRequestFailed = false;
   errorMessage = '';
-  loanStatus = '';
-
+  
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -31,7 +30,6 @@ export class LoanRequestComponent implements OnInit {
     this.authService.loanRequest(customerid,reqdate, reqamount,type,reason, status).subscribe(
       data => {
         console.log(data);
-        this.loanStatus = data.status;
         this.isSuccessful = true;
         this.isLoanRequestFailed = false;
       },
