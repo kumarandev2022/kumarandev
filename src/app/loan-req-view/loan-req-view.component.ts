@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoanRequest } from '../loanrequest';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -9,11 +10,11 @@ import { AuthService } from '../_services/auth.service';
 })
 export class LoanReqViewComponent implements OnInit {
   customerId: string ="";
- 
-  users = [
-    { customerid: 'Frank', reqdate: 'Murphy', reqamount: 'frank.murphy@test.com', type: 'User',reason:'reason',status:'pending' },
+  loanReqView: LoanRequest[] | undefined;
+//   users = [
+//     { customerid: 'Frank', reqdate: 'Murphy', reqamount: 'frank.murphy@test.com', type: 'User',reason:'reason',status:'pending' },
     
-];
+// ];
   
   constructor(private router: Router,private authService:AuthService) {
    }
@@ -22,10 +23,22 @@ export class LoanReqViewComponent implements OnInit {
   this.authService.getLoanView(this.customerId).subscribe(
     data => {
       console.log(data);
-      //this.cards = data;
+      let str: string = JSON.stringify(data);
+      this.loanReqView = JSON.parse(str);
+      console.log("kumaran",this.loanReqView);
+ 
     }
   )
   }
+
+  // CallbackFunctionToDisplay(data:any) {
+
+  //   for (var i=0; i < this.loanReqView.length; i++){
+  //       this.loanReqView[i];
+  //       console.log("kum12345",this.loanReqView[i]);
+  //   }
+  //   return this.loanReqView;
+  // }
   
    
 }
