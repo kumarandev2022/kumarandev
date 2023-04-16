@@ -1,12 +1,26 @@
-<h3>Grid List of Cards</h3>
-<mat-grid-list cols="4" rowHeight="75px">
-  <mat-grid-tile *ngFor="let card of cards">
-    <mat-card class="my-card">
-      <mat-card-title>{{card.title}}</mat-card-title>
-      <mat-card-content>
-         {{card.content}}
-      </mat-card-content>
-    </mat-card> 
-  </mat-grid-tile>
-</mat-grid-list>
-
+<br>
+<h1 align="center" style="color: #0651a0;">Loan Requested List</h1>
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>CustomerId</th>
+                <th>Requested Date</th>
+                <th>Requested Amount</th>
+                <th>Type</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.customerid}}</td>
+                <td>{{user.reqdate}}</td>
+                <td>{{user.reqamount}}</td>
+                <td>{{user.type}}</td>
+                <td>{{user.reason}}</td>
+                <td>{{user.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

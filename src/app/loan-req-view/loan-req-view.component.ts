@@ -10,12 +10,10 @@ import { AuthService } from '../_services/auth.service';
 export class LoanReqViewComponent implements OnInit {
   customerId: string ="";
  
-  cards = [
-    {title: 'Title 1', content: 'Content 1'},
-    {title: 'Title 2', content: 'Content 2'},
-    {title: 'Title 3', content: 'Content 3'},
-    {title: 'Title 4', content: 'Content 4'}
-  ];
+  users = [
+    { customerid: 'Frank', reqdate: 'Murphy', reqamount: 'frank.murphy@test.com', type: 'User',reason:'reason',status:'pending' },
+    
+];
   
   constructor(private router: Router,private authService:AuthService) {
    }
@@ -24,6 +22,7 @@ export class LoanReqViewComponent implements OnInit {
   this.authService.getLoanView(this.customerId).subscribe(
     data => {
       console.log(data);
+      //this.cards = data;
     }
   )
   }
