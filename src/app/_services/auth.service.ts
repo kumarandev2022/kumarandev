@@ -111,4 +111,8 @@ export class AuthService {
   getLoanView(customerId: string): Observable<any> {
     return this.http.get(AUTH_API + 'loanreq-view/'+customerId, httpOptions);
   }
+  getLoanEdit(customerId: string): Observable<any> {
+    return this.http.get(AUTH_API + 'loanreq-edit/'+customerId, httpOptions);
+  }
+  
 }

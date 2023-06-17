@@ -1,1 +1,93 @@
-<p>loan-req-edit works!</p>
+<br>
+<h1 align="center" style="color: #0651a0;">Loan Request</h1>
+<!-- <div class="col-md-12">
+    <div class="card card-container">
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="reqdate">Required Date</label>
+          <input
+            type="date"
+            id="reqdate"
+            class="form-control"
+            name="reqdate"
+            [(ngModel)]="form.reqdate"
+            required
+            #reqdate="ngModel"
+          />
+          <div class="alert-danger" *ngIf="reqdate.errors && f.submitted">
+            <div *ngIf="reqdate.errors?.['required']">Date is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reqamount">Amount</label>
+          <select class="form-control" type="reqamount" name="reqamount" [(ngModel)]="form.reqamount"
+          required
+          reqamount
+          #reqamount="ngModel">
+            <option disabled class="option1">Choose Amount</option> 
+            <option>10000</option>
+            <option>20000</option>  
+            <option>30000</option> 
+            <option>40000</option> 
+            <option>50000</option> 
+         </select> 
+          <div class="alert-danger" *ngIf="reqamount.errors && f.submitted">
+            <div *ngIf="reqamount.errors?.['required']">reqamount is required</div>
+          </div> 
+        </div>
+
+        <div class="form-group" aria-disabled="true">
+          <label for="type">Type</label>
+          <select class="form-control" type="text" name="type"
+            [(ngModel)]="form.type"
+            required
+            type
+            #type="ngModel">
+            <option disabled class="option1">Choose Type</option>
+            <option>Emergency</option>
+            <option>Important</option>  
+            <option>Need</option> 
+         </select> 
+          <div class="alert-danger" *ngIf="type.errors && f.submitted">
+            <div *ngIf="type.errors?.['required']">Type is required</div>
+          </div> 
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason</label>
+          <input
+            type="reason"
+            class="form-control"
+            name="reason"
+            [(ngModel)]="form.reason"
+            required
+            reason
+            #reason="ngModel"
+          />
+          <div class="alert-danger" *ngIf="reason.errors && f.submitted">
+            <div *ngIf="reason.errors?.['required']">Reason is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Submit</button>
+        </div>
+  
+        <div class="alert alert-warning" *ngIf="f.submitted && isLoanRequestFailed">
+          Loan Request failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Successfully Loan Requested! <br>
+        <p>Your Status is <span class="bolded">pending</span>. Once Admin approved, your will get loan based on the priority.
+      </div>
+    </div> -->
+  <!-- </div> -->
+
+

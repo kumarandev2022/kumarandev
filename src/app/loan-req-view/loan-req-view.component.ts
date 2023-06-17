@@ -11,11 +11,6 @@ import { AuthService } from '../_services/auth.service';
 export class LoanReqViewComponent implements OnInit {
   customerId: string ="";
   loanReqView: LoanRequest[] | undefined;
-//   users = [
-//     { customerid: 'Frank', reqdate: 'Murphy', reqamount: 'frank.murphy@test.com', type: 'User',reason:'reason',status:'pending' },
-    
-// ];
-  
   constructor(private router: Router,private authService:AuthService) {
    }
   ngOnInit(): void {
@@ -25,20 +20,7 @@ export class LoanReqViewComponent implements OnInit {
       console.log(data);
       let str: string = JSON.stringify(data);
       this.loanReqView = JSON.parse(str);
-      console.log("kumaran",this.loanReqView);
- 
     }
   )
   }
-
-  // CallbackFunctionToDisplay(data:any) {
-
-  //   for (var i=0; i < this.loanReqView.length; i++){
-  //       this.loanReqView[i];
-  //       console.log("kum12345",this.loanReqView[i]);
-  //   }
-  //   return this.loanReqView;
-  // }
-  
-   
 }
