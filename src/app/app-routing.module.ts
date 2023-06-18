@@ -21,6 +21,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoanReqViewComponent } from './loan-req-view/loan-req-view.component';
 import { LoanHomeComponent } from './loan-home/loan-home.component';
+import { SavingsHomeComponent } from './savings-home/savings-home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -43,7 +44,8 @@ const routes: Routes = [
   { path:'clubs', component: ClubRegistrationComponent},
   { path:'customers', component: RelCustomerComponent},
   { path:'loan-view', component: LoanReqViewComponent},
-  { path:'loan-home', component: LoanHomeComponent}
+  { path:'loan-home', component: LoanHomeComponent},
+  { path:'savings-home', component: SavingsHomeComponent}
 ];
 
 @NgModule({

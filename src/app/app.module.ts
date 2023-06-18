@@ -37,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { LoanHomeComponent } from './loan-home/loan-home.component';
+import { SavingsHomeComponent } from './savings-home/savings-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,8 @@ import { LoanHomeComponent } from './loan-home/loan-home.component';
     MonthlySavViewComponent,
     LoadingComponent,
     MonthlySavEditComponent,
-    LoanHomeComponent
+    LoanHomeComponent,
+    SavingsHomeComponent
     ],
   imports: [
     BrowserModule,
